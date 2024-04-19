@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <form action="{% url 'editar_repuesto' repuesto.id %}" method="POST">
+        {% csrf_token %}
+        <p>Item:</p>
+        {{mi_formulario.item}}
+        <p>Marca:</p>
+        {{mi_formulario.marca}}
+        <p>Precio:</p>
+        {{mi_formulario.precio}}
+        <button>Enviar</button>
+    </form>
+{% endblock %}

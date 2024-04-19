@@ -1,0 +1,17 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    {% if motos %}
+        <ul>
+        {% for moto in motos %}
+            <li>Marca: {{moto.marca}}</li>
+            <li>Modelo: {{moto.modelo}}</li>
+            <li>Estado: {{moto.estado}}</li>
+            <li>Año: {{moto.año}}</li>
+            <li>Precio: {{moto.precio}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron motos con esa marca</p>
+    {% endif %}s
+{% endblock %}

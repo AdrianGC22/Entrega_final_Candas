@@ -1,0 +1,35 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenido %}
+    <h3>Lista de sucursales</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>PROVINCIA</th>
+                <th>LOCALIDAD</th>
+                <th>DIRECCION</th>
+                <th>TELEFONO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for n in sucursales %}
+            <tr>
+                <th scope="row">{{n.id}}</th>
+                <td>{{n.provincia}}</td>
+                <td>{{n.localidad}}</td>
+                <td>{{n.direccion}}</td>
+                <td>{{n.telefono}}</td>
+                {% if request.user.is_authenticated %}
+
+                <td><a href="{% url 'eliminar_sucursal' n.id %}" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="{% url 'editar_sucursal' n.id %}" class="btn btn-warning">Editar</a></td>
+                {% endif %}
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
+

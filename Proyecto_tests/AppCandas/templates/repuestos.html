@@ -1,0 +1,11 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <div class="container">
+        {% if request.user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'alta_repuesto' %}">Alta</a>
+        <a class="btn btn-primary" href="{% url 'consulta_repuesto' %}">Consulta</a>
+        {% endif %}
+        <a class="btn btn-primary" href="{% url 'base_repuestos' %}">Listado repuestos</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <form action="/AppCandas/motos/alta_moto/" method="POST">
+        {% csrf_token %}
+        <p>Marca:</p>
+        <input type="text" name="marca" required>
+        <p>Modelo:</p>
+        <input type="text" name="modelo" required>
+        <p>Estado:</p>
+        <input type="text" name="estado" required>
+        <p>Año:</p>
+        <input type="number" name="año" required>
+        <p>Precio:</p>
+        <input type="number" name="precio" required>
+        <button>Enviar</button>
+    </form>
+{% endblock %}

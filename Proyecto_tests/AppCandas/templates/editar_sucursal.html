@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <form action="{% url 'editar_sucursal' sucursal.id %}" method="POST">
+        {% csrf_token %}
+        <p>Provincia:</p>
+        {{mi_formulario.provincia}}
+        <p>Localidad:</p>
+        {{mi_formulario.localidad}}
+        <p>Direccion:</p>
+        {{mi_formulario.direccion}}
+        <p>Telefono:</p>
+        {{mi_formulario.telefono}}
+        <button>Enviar</button>
+    </form>
+{% endblock %}

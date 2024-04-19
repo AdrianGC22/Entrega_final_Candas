@@ -1,0 +1,8 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <div class="container-fluid">
+        <h2>Usted se ha deslogueado</h2>
+        <a href="{% url 'home' %}" class="btn btn-primary">Volver</a>
+    </div>
+{% endblock %}

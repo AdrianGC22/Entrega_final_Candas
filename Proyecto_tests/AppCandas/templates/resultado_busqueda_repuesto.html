@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    {% if repuestos %}
+        <ul>
+        {% for repuesto in repuestos %}
+            <li>Item: {{repuesto.item}}</li>
+            <li>Marca: {{repuesto.marca}}</li>
+            <li>Precio: {{moto.precio}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron repuestos</p>
+    {% endif %}s
+{% endblock %}

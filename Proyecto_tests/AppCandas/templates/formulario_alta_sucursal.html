@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <form action="/AppCandas/sucursales/alta_sucursal/" method="POST">
+        {% csrf_token %}
+        <p>Provincia:</p>
+        <input type="text" name="provincia" required>
+        <p>Localidad:</p>
+        <input type="text" name="localidad" required>
+        <p>Direccion:</p>
+        <input type="text" name="direccion" required>
+        <p>Telefono:</p>
+        <input type="number" name="telefono" required>
+        <button>Enviar</button>
+    </form>
+{% endblock %}

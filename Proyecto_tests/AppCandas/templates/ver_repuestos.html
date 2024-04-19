@@ -1,0 +1,31 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenido %}
+    <h3>Lista de repuestos</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ITEM</th>
+                <th>MARCA</th>
+                <th>PRECIO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for n in repuestos %}
+            <tr>
+                <th scope="row">{{n.id}}</th>
+                <td>{{n.item}}</td>
+                <td>{{n.marca}}</td>
+                <td>{{n.precio}}</td>
+                {% if request.user.is_authenticated %}
+                <td><a href="{% url 'eliminar_repuesto' n.id %}" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="{% url 'editar_repuesto' n.id %}" class="btn btn-warning">Editar</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
+

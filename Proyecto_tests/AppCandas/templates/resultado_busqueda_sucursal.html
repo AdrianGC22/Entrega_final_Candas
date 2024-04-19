@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    {% if sucursales %}
+        <ul>
+        {% for sucursal in sucursales %}
+            <li>Provincia: {{sucursal.provincia}}</li>
+            <li>Localidad: {{sucursal.localidad}}</li>
+            <li>Direccion: {{sucursal.direccion}}</li>
+            <li>Telefono: {{sucursal.telefono}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron sucursales en esa provincia</p>
+    {% endif %}s
+{% endblock %}

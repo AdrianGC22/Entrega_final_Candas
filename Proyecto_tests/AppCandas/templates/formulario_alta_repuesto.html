@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <form action="/AppCandas/repuestos/alta_repuesto/" method="POST">
+        {% csrf_token %}
+        <p>Item:</p>
+        <input type="text" name="item" required>
+        <p>Marca:</p>
+        <input type="text" name="marca" required>
+        <p>Precio:</p>
+        <input type="number" name="precio" required>
+        <button>Enviar</button>
+    </form>
+{% endblock %}
